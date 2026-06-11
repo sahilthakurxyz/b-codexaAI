@@ -17,7 +17,7 @@ app.use(
     allowedHeaders: ["Content-Type", "Authorization"],
   }),
 );
-app.options("*", cors({ origin: process.env.FRONTEND_URL }));
+// app.options("*", cors({ origin: process.env.FRONTEND_URL }));
 app.use("/api/ai/v1/", authRoute);
 app.use("/api/ai/v1/chat/", chatRoute);
 app.use(globalErrorHandler);
