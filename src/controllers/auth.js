@@ -68,13 +68,14 @@ export const logout = catchAsync(async (req, res, next) => {
     .clearCookie("accessToken", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      sameSite: "none",
       path: "/",
     })
     .clearCookie("refreshToken", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      // sameSite: "lax",
+      sameSite: "none",
       path: "/",
     })
     .json({
