@@ -49,7 +49,9 @@ export const globalErrorHandler = (err, req, res, next) => {
   err.statusCode = err.statusCode || 500;
   let error = { ...err };
   error.message = err.message;
-
+  if (res.headersSent) {
+    return next(err);
+  }
   // MONGOOSE
   if (err.name === "CastError") error = handleCastDBError(err);
 

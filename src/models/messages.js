@@ -14,7 +14,12 @@ const messagesSchema = new mongoose.Schema(
     },
     content: {
       type: String,
-      required: true,
+      default: "",
+    },
+    status: {
+      type: String,
+      enum: ["streaming", "completed", "failed"],
+      default: "completed",
     },
   },
   {
