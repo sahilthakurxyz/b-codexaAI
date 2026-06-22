@@ -22,4 +22,5 @@ app.use(
 // app.options("*", cors({ origin: process.env.FRONTEND_URL }));
 app.use("/api/ai/v1/", authRoute);
 app.use("/api/ai/v1/chat/", chatRoute);
+app.use("/files/pdfs", express.static("./generated/pdfs"));
 app.use(globalErrorHandler);
