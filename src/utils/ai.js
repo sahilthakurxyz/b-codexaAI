@@ -26,13 +26,12 @@ Examples:
           content: message,
         },
       ],
-      model: "llama-3.1-8b-instant",
+      model: "openai/gpt-oss-120b",
       temperature: 0.2,
       max_completion_tokens: 20,
     });
 
     const raw = completion.choices?.[0]?.message?.content?.trim();
-
     return sanitizeTitle(raw, message);
   } catch (err) {
     console.error("generateAITitle failed:", err.message);
