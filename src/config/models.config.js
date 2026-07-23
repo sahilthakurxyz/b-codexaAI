@@ -34,7 +34,7 @@ export const TYPE_PRIORITY = [
 export const MODEL_MAP = {
   [INTENT_TYPES.CODING]: {
     provider: "groq",
-    model: "meta-llama/llama-4-scout-17b-16e-instruct",
+    model: "openai/gpt-oss-120b",
     stream: true,
     handler: "chatHandler",
   },
@@ -49,7 +49,7 @@ export const MODEL_MAP = {
   },
   [INTENT_TYPES.CONTENT_WRITING]: {
     provider: "groq",
-    model: "meta-llama/llama-4-scout-17b-16e-instruct",
+    model: "openai/gpt-oss-120b",
     stream: true,
     handler: "chatHandler",
   },
@@ -70,13 +70,13 @@ export const MODEL_MAP = {
   },
   [INTENT_TYPES.PDF_GENERATION]: {
     provider: "pdf",
-    model: "meta-llama/llama-4-scout-17b-16e-instruct",
+    model: "openai/gpt-oss-120b",
     stream: false,
     handler: "pdfHandler",
   },
   [INTENT_TYPES.GENERAL]: {
     provider: "groq",
-    model: "meta-llama/llama-4-scout-17b-16e-instruct",
+    model: "openai/gpt-oss-120b",
     stream: true,
     handler: "chatHandler",
   },
@@ -85,5 +85,5 @@ export const MODEL_MAP = {
 // Small/fast model used ONLY for classification — never for the real answer.
 export const CLASSIFIER_MODEL = {
   provider: "groq",
-  model: "llama-3.1-8b-instant",
+  model: "openai/gpt-oss-120b",
 };
